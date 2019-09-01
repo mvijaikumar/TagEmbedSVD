@@ -1,0 +1,70 @@
+[INFO ] 2019-08-31 23:05:22,337 -- Dataset: ...taset/ML_LT/LT/folds/all/train1.txt
+[DEBUG] 2019-08-31 23:05:23,442 -- With Specs: {Users, Items, Ratings} = {4916, 4945, 84136}, Scale = {0.5,1.0,1.5,2.0,2.5,3.0,3.5,4.0,4.5,5.0}
+[INFO ] 2019-08-31 23:05:23,694 -- With Setup: test-set -f /home/Studies/PROJECTS/TagEmbedSVD/TagEmbedSVD_Dataset/ML_LT/LT/folds/all/test1.txt -vv /home/Studies/PROJECTS/TagEmbedSVD/TagEmbedSVD_Dataset/ML_LT/LT/folds/all/valid.txt --test-view all --early-stop RMSE
+[INFO ] 2019-08-31 23:05:23,696 -- Dataset: ...ataset/ML_LT/LT/folds/all/test1.txt
+[DEBUG] 2019-08-31 23:05:24,003 -- With Specs: {Users, Items, Ratings} = {4916, 4945, 21035}, Scale = {0.5,1.0,1.5,2.0,2.5,3.0,3.5,4.0,4.5,5.0}
+[INFO ] 2019-08-31 23:05:24,060 -- Dataset: ...ataset/ML_LT/LT/folds/all/valid.txt
+[DEBUG] 2019-08-31 23:05:24,168 -- With Specs: {Users, Items, Ratings} = {4916, 4945, 21035}, Scale = {0.5,1.0,1.5,2.0,2.5,3.0,3.5,4.0,4.5,5.0}
+[DEBUG] 2019-08-31 23:05:24,204 -- Tag dataset: ...ag/TagEmbedSVD/w2v/usertag_freq.txt
+[DEBUG] 2019-08-31 23:05:24,205 -- Tag2 dataset: ...ag/TagEmbedSVD/w2v/itemtag_freq.txt
+[INFO ] 2019-08-31 23:05:24,205 -- Dataset: ...ag/TagEmbedSVD/w2v/usertag_freq.txt
+[DEBUG] 2019-08-31 23:05:24,820 -- With Specs: {Users, Items, Ratings} = {5222, 6592, 93913}, Scale = {1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0,10.0,11.0,12.0,13.0,14.0,15.0,16.0,17.0,18.0,19.0,20.0,21.0,22.0,23.0,24.0,25.0,26.0,27.0,28.0,29.0,30.0,31.0,32.0,33.0,34.0,35.0,36.0,37.0,38.0,39.0,40.0,41.0,42.0,43.0,44.0,45.0,46.0,47.0,48.0,49.0,50.0,51.0,52.0,53.0,54.0,55.0,56.0,57.0,58.0,59.0,60.0,61.0,62.0,63.0,64.0,65.0,66.0,67.0,68.0,69.0,70.0,71.0,72.0,73.0,74.0,75.0,76.0,77.0,78.0,79.0,80.0,81.0,82.0,83.0,84.0,85.0,86.0,87.0,88.0,89.0,90.0,91.0,92.0,93.0,94.0,95.0,97.0,98.0,99.0,100.0,101.0,102.0,103.0,104.0,106.0,107.0,109.0,110.0,111.0,112.0,114.0,115.0,116.0,122.0,124.0,125.0,126.0,127.0,128.0,130.0,132.0,136.0,137.0,138.0,141.0,143.0,145.0,146.0,150.0,151.0,156.0,157.0,162.0,177.0,183.0,219.0,224.0,281.0,320.0}
+[INFO ] 2019-08-31 23:05:24,947 -- Dataset: ...ag/TagEmbedSVD/w2v/itemtag_freq.txt
+[DEBUG] 2019-08-31 23:05:25,624 -- With Specs: {Users, Items, Ratings} = {8416, 10319, 125687}, Scale = {1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0,10.0,11.0,12.0,13.0,14.0,15.0,16.0,17.0,18.0,19.0,20.0,21.0,22.0,23.0,24.0,25.0,26.0,27.0,28.0,29.0,30.0,31.0,32.0,33.0,34.0,35.0,36.0,37.0,38.0,39.0,40.0,41.0,42.0,43.0,44.0,45.0,46.0,47.0,48.0,49.0,50.0,51.0,52.0,53.0,54.0,55.0,56.0,57.0,58.0,59.0,60.0,61.0,62.0,63.0,64.0,65.0,66.0,67.0,68.0,69.0,70.0,71.0,72.0,73.0,74.0,75.0,76.0,77.0,78.0,79.0,81.0,82.0,83.0,84.0,85.0,86.0,87.0,88.0,90.0,92.0,93.0,94.0,95.0,96.0,97.0,98.0,99.0,100.0,101.0,102.0,103.0,104.0,105.0,106.0,107.0,109.0,110.0,113.0,114.0,118.0,119.0,122.0,126.0,127.0,129.0,130.0,134.0,135.0,137.0,138.0,139.0,140.0,141.0,142.0,143.0,145.0,146.0,148.0,153.0,154.0,157.0,160.0,167.0,179.0,182.0,187.0,189.0,191.0,194.0,195.0,197.0,200.0,212.0,219.0,220.0,233.0,236.0,312.0,320.0,322.0,327.0,333.0,371.0}
+[DEBUG] 2019-08-31 23:05:28,243 -- TagEmbedSVD: [factors, lRate, maxLRate, regB, regU, regI, regS, iters, boldDriver] = [10, 0.003, -1.0, 0.2, 0.5, 0.5, 0.09, 0.09, 250, true]
+[DEBUG] 2019-08-31 23:05:41,123 -- TagEmbedSVD iter 1: loss = 825151.25, delta_loss = -825151.25, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.003
+[DEBUG] 2019-08-31 23:05:51,287 -- TagEmbedSVD iter 2: loss = 308623.1, delta_loss = 516528.16, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.003
+[DEBUG] 2019-08-31 23:05:59,977 -- TagEmbedSVD iter 3: loss = 207096.0, delta_loss = 101527.09, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.00315
+[DEBUG] 2019-08-31 23:06:08,315 -- TagEmbedSVD iter 4: loss = 162072.67, delta_loss = 45023.332, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.0033075
+[DEBUG] 2019-08-31 23:06:17,058 -- TagEmbedSVD iter 5: loss = 135836.95, delta_loss = 26235.709, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.003472875
+[DEBUG] 2019-08-31 23:06:28,276 -- TagEmbedSVD iter 6: loss = 118823.67, delta_loss = 17013.287, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.0036465188
+[DEBUG] 2019-08-31 23:06:37,502 -- TagEmbedSVD iter 7: loss = 106983.6, delta_loss = 11840.064, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.0038288448
+[DEBUG] 2019-08-31 23:06:46,565 -- TagEmbedSVD iter 8: loss = 98289.24, delta_loss = 8694.359, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.004020287
+[DEBUG] 2019-08-31 23:06:55,404 -- TagEmbedSVD iter 9: loss = 91619.836, delta_loss = 6669.4067, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.0042213015
+[DEBUG] 2019-08-31 23:07:04,430 -- TagEmbedSVD iter 10: loss = 86311.77, delta_loss = 5308.062, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.004432366
+[DEBUG] 2019-08-31 23:07:13,387 -- TagEmbedSVD iter 11: loss = 81951.21, delta_loss = 4360.561, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.0046539847
+[DEBUG] 2019-08-31 23:07:22,584 -- TagEmbedSVD iter 12: loss = 78269.19, delta_loss = 3682.0261, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.004886684
+[DEBUG] 2019-08-31 23:07:31,604 -- TagEmbedSVD iter 13: loss = 75084.83, delta_loss = 3184.362, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.0051310183
+[DEBUG] 2019-08-31 23:07:40,683 -- TagEmbedSVD iter 14: loss = 72272.95, delta_loss = 2811.8691, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.005387569
+[DEBUG] 2019-08-31 23:07:50,623 -- TagEmbedSVD iter 15: loss = 69744.836, delta_loss = 2528.12, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.0056569474
+[DEBUG] 2019-08-31 23:08:00,474 -- TagEmbedSVD iter 16: loss = 67436.27, delta_loss = 2308.5667, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.0059397947
+[DEBUG] 2019-08-31 23:08:10,274 -- TagEmbedSVD iter 17: loss = 65300.06, delta_loss = 2136.2122, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.0062367846
+[DEBUG] 2019-08-31 23:08:20,018 -- TagEmbedSVD iter 18: loss = 63301.055, delta_loss = 1999.0038, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.006548624
+[DEBUG] 2019-08-31 23:08:28,951 -- TagEmbedSVD iter 19: loss = 61412.84, delta_loss = 1888.214, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.006876055
+[DEBUG] 2019-08-31 23:08:37,713 -- TagEmbedSVD iter 20: loss = 59615.426, delta_loss = 1797.4136, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.0072198575
+[DEBUG] 2019-08-31 23:08:46,541 -- TagEmbedSVD iter 21: loss = 57893.625, delta_loss = 1721.801, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.0075808507
+[DEBUG] 2019-08-31 23:08:55,367 -- TagEmbedSVD iter 22: loss = 56235.87, delta_loss = 1657.7523, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.007959893
+[DEBUG] 2019-08-31 23:09:04,223 -- TagEmbedSVD iter 23: loss = 54633.363, delta_loss = 1602.5115, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.008357888
+[DEBUG] 2019-08-31 23:09:13,039 -- TagEmbedSVD iter 24: loss = 53079.39, delta_loss = 1553.9701, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.008775782
+[DEBUG] 2019-08-31 23:09:22,011 -- TagEmbedSVD iter 25: loss = 51568.887, delta_loss = 1510.5049, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.009214572
+[DEBUG] 2019-08-31 23:09:31,164 -- TagEmbedSVD iter 26: loss = 50098.03, delta_loss = 1470.8561, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.0096753
+[DEBUG] 2019-08-31 23:09:40,000 -- TagEmbedSVD iter 27: loss = 48663.996, delta_loss = 1434.0331, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.010159065
+[DEBUG] 2019-08-31 23:09:48,919 -- TagEmbedSVD iter 28: loss = 47264.758, delta_loss = 1399.2416, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.010667019
+[DEBUG] 2019-08-31 23:09:57,713 -- TagEmbedSVD iter 29: loss = 45898.926, delta_loss = 1365.8287, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.011200369
+[DEBUG] 2019-08-31 23:10:07,122 -- TagEmbedSVD iter 30: loss = 44565.684, delta_loss = 1333.2444, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.011760388
+[DEBUG] 2019-08-31 23:10:16,187 -- TagEmbedSVD iter 31: loss = 43264.664, delta_loss = 1301.0184, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.012348407
+[DEBUG] 2019-08-31 23:10:24,959 -- TagEmbedSVD iter 32: loss = 41995.914, delta_loss = 1268.7521, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.012965827
+[DEBUG] 2019-08-31 23:10:33,791 -- TagEmbedSVD iter 33: loss = 40759.793, delta_loss = 1236.1201, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.013614119
+[DEBUG] 2019-08-31 23:10:42,501 -- TagEmbedSVD iter 34: loss = 39556.914, delta_loss = 1202.8774, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.014294825
+[DEBUG] 2019-08-31 23:10:51,317 -- TagEmbedSVD iter 35: loss = 38388.05, delta_loss = 1168.8633, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.015009566
+[DEBUG] 2019-08-31 23:11:00,129 -- TagEmbedSVD iter 36: loss = 37254.055, delta_loss = 1133.9987, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.015760044
+[DEBUG] 2019-08-31 23:11:08,920 -- TagEmbedSVD iter 37: loss = 36155.777, delta_loss = 1098.274, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.016548047
+[DEBUG] 2019-08-31 23:11:17,701 -- TagEmbedSVD iter 38: loss = 35094.047, delta_loss = 1061.7328, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.017375449
+[DEBUG] 2019-08-31 23:11:26,589 -- TagEmbedSVD iter 39: loss = 34069.594, delta_loss = 1024.4518, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.018244222
+[DEBUG] 2019-08-31 23:11:35,456 -- TagEmbedSVD iter 40: loss = 33083.066, delta_loss = 986.5266, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.019156432
+[DEBUG] 2019-08-31 23:11:44,293 -- TagEmbedSVD iter 41: loss = 32135.006, delta_loss = 948.0611, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.020114254
+[DEBUG] 2019-08-31 23:11:53,104 -- TagEmbedSVD iter 42: loss = 31225.844, delta_loss = 909.1622, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.021119967
+[DEBUG] 2019-08-31 23:12:01,975 -- TagEmbedSVD iter 43: loss = 30355.906, delta_loss = 869.9381, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.022175964
+[DEBUG] 2019-08-31 23:12:10,740 -- TagEmbedSVD iter 44: loss = 29525.408, delta_loss = 830.49817, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.023284763
+[DEBUG] 2019-08-31 23:12:19,557 -- TagEmbedSVD iter 45: loss = 28734.457, delta_loss = 790.9516, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.024449
+[DEBUG] 2019-08-31 23:12:28,321 -- TagEmbedSVD iter 46: loss = 27983.05, delta_loss = 751.4056, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.02567145
+[DEBUG] 2019-08-31 23:12:37,116 -- TagEmbedSVD iter 47: loss = 27271.088, delta_loss = 711.96234, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.026955023
+[DEBUG] 2019-08-31 23:12:45,923 -- TagEmbedSVD iter 48: loss = 26598.373, delta_loss = 672.7163, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.028302776
+[DEBUG] 2019-08-31 23:12:54,934 -- TagEmbedSVD iter 49: loss = 25964.621, delta_loss = 633.7518, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.029717913
+[DEBUG] 2019-08-31 23:13:03,728 -- TagEmbedSVD iter 50: loss = 25369.479, delta_loss = 595.1422, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.03120381
+[DEBUG] 2019-08-31 23:13:12,568 -- TagEmbedSVD iter 51: loss = 24812.527, delta_loss = 556.9506, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.032764
+[DEBUG] 2019-08-31 23:13:21,351 -- TagEmbedSVD iter 52: loss = 24293.297, delta_loss = 519.2308, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.0344022
+[DEBUG] 2019-08-31 23:13:30,128 -- TagEmbedSVD iter 53: loss = 23811.268, delta_loss = 482.0291, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.03612231
+[DEBUG] 2019-08-31 23:13:38,935 -- TagEmbedSVD iter 54: loss = 23365.88, delta_loss = 445.38647, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.037928425
+[DEBUG] 2019-08-31 23:13:47,749 -- TagEmbedSVD iter 55: loss = 22956.541, delta_loss = 409.33954, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.039824847
+[DEBUG] 2019-08-31 23:13:56,529 -- TagEmbedSVD iter 56: loss = 22582.621, delta_loss = 373.92133, RMSE = 0.000000, delta_RMSE = 0.000000, learn_rate = 0.04181609

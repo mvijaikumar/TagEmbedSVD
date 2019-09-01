@@ -1,0 +1,12 @@
+Dataset: ...taset/ML_LT/ML/folds/all/train1.txt
+With Setup: test-set -f ../dataset/ML_LT/ML/folds/all/test1.txt -vv ../dataset/ML_LT/ML/folds/all/valid.txt --test-view all --early-stop RMSE
+Dataset: ...ataset/ML_LT/ML/folds/all/test1.txt
+Dataset: ...ataset/ML_LT/ML/folds/all/valid.txt
+Dataset: ...ag/TagEmbedSVD/w2v/usertag_freq.txt
+Dataset: ...ag/TagEmbedSVD/w2v/itemtag_freq.txt
+validMetrics: MAE,MPE,NMAE,Perplexity,RMSE,R_MAE,R_RMSE
+TagEmbedSVD,0.598696,1.000000,Infinity,0.000000,0.768691,3.526502,3.685608,,5, 0.003, -1.0, 0.8, 1.8, 0.5, 0.09, 0.09, 100, true,'<unknown>','<unknown>'
+
+testMetrics: MAE,MPE,NMAE,Perplexity,RMSE,R_MAE,R_RMSE
+TagEmbedSVD,0.652995,0.748354,0.145110,-1.000000,0.843055,0.642496,0.855596,,5, 0.003, -1.0, 0.8, 1.8, 0.5, 0.09, 0.09, 100, true,'20:59','00:01'
+

@@ -1,0 +1,12 @@
+validMetrics: MAE,MPE,NMAE,Perplexity,RMSE,R_MAE,R_RMSE
+TagEmbedSVD,0.878619,1.000000,Infinity,0.000000,1.033770,3.961754,4.071212,,5, 0.003, -1.0, 0.8, 1.8, 0.45, 0.09, 0.09, 100, true,'<unknown>','<unknown>'
+testMetrics: MAE,MPE,NMAE,Perplexity,RMSE,R_MAE,R_RMSE
+TagEmbedSVD,0.651757,0.746079,0.144835,-1.000000,0.842365,0.640976,0.854405,,5, 0.003, -1.0, 0.8, 1.8, 0.45, 0.09, 0.09, 100, true,'24:48','00:00'
+validMetrics: MAE,MPE,NMAE,Perplexity,RMSE,R_MAE,R_RMSE
+TagEmbedSVD,0.878619,1.000000,Infinity,0.000000,1.033770,3.961754,4.071212,,5, 0.003, -1.0, 0.8, 1.8, 0.45, 0.09, 0.09, 100, true,'<unknown>','<unknown>'
+testMetrics: MAE,MPE,NMAE,Perplexity,RMSE,R_MAE,R_RMSE
+TagEmbedSVD,0.653176,0.746396,0.145150,-1.000000,0.844117,0.641731,0.855596,,5, 0.003, -1.0, 0.8, 1.8, 0.45, 0.09, 0.09, 100, true,'25:09','00:00'
+validMetrics: MAE,MPE,NMAE,Perplexity,RMSE,R_MAE,R_RMSE
+TagEmbedSVD,0.598696,1.000000,Infinity,0.000000,0.768691,3.526502,3.685608,,5, 0.003, -1.0, 0.8, 1.8, 0.5, 0.09, 0.09, 100, true,'<unknown>','<unknown>'
+testMetrics: MAE,MPE,NMAE,Perplexity,RMSE,R_MAE,R_RMSE
+TagEmbedSVD,0.652995,0.748354,0.145110,-1.000000,0.843055,0.642496,0.855596,,5, 0.003, -1.0, 0.8, 1.8, 0.5, 0.09, 0.09, 100, true,'20:59','00:01'

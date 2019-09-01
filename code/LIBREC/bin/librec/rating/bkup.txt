@@ -1,0 +1,26 @@
+/* List<Integer> user_tags = userTagCache.get(u);
+		if (user_tags.size() > 0) {
+			double sum = 0;
+			for (int t : user_tags) {
+				sum += ; 
+			}
+			DenseVector WuE = E.mult(vec)
+			double val = 
+			pred +=  * reg_Tu_vec.get(u);
+		}*/
+
+		
+		// W
+		List<Integer> user_tags = userTagCache.get(u);
+		if (user_tags.size() > 0) {
+			DenseVector WuE = E.mult(W.row(u),true); //verified
+			
+			double sum = 0;			
+			for (int t : user_tags)
+				sum += T.row(t).inner(WuE);
+			//System.out.println(" summ " +sum);
+			pred +=  sum * alpha * reg_Tu_vec.get(u);
+		}
+		
+		
+		// optimization is possible with sumtags for each users stored in hashtable

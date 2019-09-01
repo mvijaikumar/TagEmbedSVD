@@ -1,0 +1,6 @@
+Dataset: ...taset/ML_LT/ML/folds/all/train1.txt
+With Setup: test-set -f ../dataset/ML_LT/ML/folds/all/test1.txt -vv ../dataset/ML_LT/ML/folds/all/valid.txt --test-view all --early-stop RMSE
+Dataset: ...ataset/ML_LT/ML/folds/all/test1.txt
+Dataset: ...ataset/ML_LT/ML/folds/all/valid.txt
+Dataset: ...ag/TagEmbedSVD/w2v/usertag_freq.txt
+Dataset: ...ag/TagEmbedSVD/w2v/itemtag_freq.txt

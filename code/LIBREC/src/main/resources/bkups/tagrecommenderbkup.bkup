@@ -1,0 +1,177 @@
+// Copyright (C) 2014 Guibing Guo
+//
+// This file is part of LibRec.
+//
+// LibRec is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// LibRec is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with LibRec. If not, see <http://www.gnu.org/licenses/>.
+//
+
+package librec.intf;
+
+import java.io.IOException;
+import java.util.List;
+
+import librec.data.Configuration;
+import librec.data.DataDAO;
+import librec.data.SparseMatrix;
+import librec.data.SparseVector;
+import librec.util.Logs;
+import librec.util.Strings;
+
+import com.google.common.cache.LoadingCache;
+
+/**
+ * Recommenders in which social information is used
+ * 
+ * @author guoguibing
+ * 
+ */
+@Configuration("factors, lRate, maxLRate, regB, regU, regI, regS, iters, boldDriver")
+public abstract class TagRecommender extends IterativeRecommender {
+	
+	
+	protected double oldval = Float.MAX_VALUE; 
+	// social data dao
+	protected static DataDAO tagDao;
+	protected static DataDAO tagDao2;
+
+	// socialMatrix: social rate matrix, indicating a user is connecting to a number of other users
+	// trSocialMatrix: inverse social matrix, indicating a user is connected by a number of other users
+	
+	//protected static SparseMatrix socialMatrix;
+	protected static SparseMatrix tagMatrix;
+	protected static SparseMatrix tagMatrix2;
+
+	// a list of rating scales
+	protected static List<Double> ratingScaleTag;
+	// Maximum, minimum values of rating scales
+	protected static double maxRateTag, minRateTag;
+		
+	// social regularization
+	//protected static float regS;
+	protected static float regSU,regSV;
+	protected static int numTags;
+
+	// indicator of static field initialization or reset
+	public static boolean resetStatics = true;
+
+	// shared social cache for all social recommenders
+	protected LoadingCache<Integer, SparseVector> socialCache;
+	protected LoadingCache<Integer, List<Integer>> userFriendsCache;
+	
+	protected LoadingCache<Integer, List<Integer>> userTagCache;
+	protected LoadingCache<Integer, List<Integer>> itemTagCache;
+
+	// initialization
+	static {
+		String tagPath = cf.getPath("dataset.simu");
+		String tagPath2 = cf.getPath("dataset.simv");
+		Logs.debug("Tag dataset: {}", Strings.last(tagPath, 38));
+		Logs.debug("Tag2 dataset: {}", Strings.last(tagPath2, 38));
+		boolean isTag ;
+		if(cf.getString("tagtype").contains("sim")) {
+			isTag = false;
+			tagDao = new DataDAO(tagPath, rateDao.getUserIds(), rateDao.getUserIds(), isTag);
+			tagDao2 = new DataDAO(tagPath2, rateDao.getItemIds(), rateDao.getItemIds(), isTag);
+			
+		}
+		else {
+			isTag = true;
+			tagDao = new DataDAO(tagPath, rateDao.getUserIds(), rateDao.getTagIds(), isTag);
+			tagDao2 = new DataDAO(tagPath2, rateDao.getItemIds(), rateDao.getTagIds(), isTag);
+		}
+			
+
+		try {
+			boolean isTag = true;
+			boolean isUser = true;
+			tagMatrix = tagDao.readData(isTag, isUser)[0];
+			isUser=false;
+			tagMatrix2 = tagDao2.readData(isTag, isUser)[0];
+			//numUsers  = tagDao.numUsers();
+			numTags  = tagDao2.numTags();
+
+			//socialCache = socialMatrix.rowCache(cacheSpec);
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.exit(-1);
+		}
+	}
+
+	public TagRecommender(SparseMatrix trainMatrix, SparseMatrix testMatrix, int fold) {
+		super(trainMatrix, testMatrix, fold);
+
+		if (resetStatics) {
+			resetStatics = false;
+			regSU = regOptions.getFloat("-su", reg);
+			regSV = regOptions.getFloat("-sv", reg);
+		}
+	}
+
+	public TagRecommender(SparseMatrix trainMatrix, SparseMatrix testMatrix, SparseMatrix validMatrix, int fold) throws IOException {
+		super(trainMatrix, testMatrix, validMatrix, fold);
+		//mine
+
+		ratingScaleTag = rateDao.getRatingScale();
+		minRateTag = ratingScaleTag.get(0);
+		maxRateTag = ratingScaleTag.get(ratingScaleTag.size() - 1);
+		if (resetStatics) {
+			resetStatics = false;
+			regSU = regOptions.getFloat("-su", reg);
+			regSV = regOptions.getFloat("-sv", reg);
+		}
+	}
+	
+	/**
+	 * normalize a rating to the region (0, 1)
+	 */
+	protected double normalizeTag(double rate) {
+		return (rate - minRateTag) / (maxRateTag - minRateTag);
+	}
+	
+	@Override
+	public String toString() {
+		return Strings.toString(new Object[] { numFactors, initLRate, maxLRate, regB, regU, regI, regSU, regSV, numIters,
+				isBoldDriver });
+	}
+
+	@Override
+	protected boolean isTestable(int u, int j) {
+		switch (view) {
+		case "cold-start":
+			return trainMatrix.rowSize(u) < 5 ? true : false;
+		case "trust-degree":
+			int min_deg = cf.getInt("min.trust.degree");
+			int max_deg = cf.getInt("max.trust.degree");
+			if (min_deg == -1)
+				min_deg = 0;
+			if (max_deg == -1)
+				max_deg = Integer.MAX_VALUE;
+
+			// size could be indegree + outdegree
+			int in_deg = tagMatrix.columnSize(u);
+			int out_deg = tagMatrix.rowSize(u);
+			int deg = in_deg + out_deg;
+
+			boolean cond = (deg >= min_deg) && (deg <= max_deg);
+
+			return cond ? true : false;
+
+		case "all":
+		default:
+			return true;
+		}
+	}
+
+}
+
